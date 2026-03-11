@@ -15,6 +15,7 @@ struct RestaurantDetailView: View {
                         Image(restaurant.imageName)
                             .resizable()
                             .scaledToFill()
+                            .clipped()
                     } else {
                         Image(systemName: thumbnailIcon(for: restaurant.name))
                             .resizable()
