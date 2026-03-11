@@ -8,6 +8,7 @@ import MapKit
 struct NavigationMapView: View {
 
     @State private var selectedTab: Int = 0
+    @State private var selectedRestaurant: Restaurant?
 
     // Bali / Sanur region
     @State private var cameraPosition: MapCameraPosition = .region(
@@ -35,6 +36,9 @@ struct NavigationMapView: View {
                 DetailRouteView(restaurants: restaurants)
             }
         }
+        .navigationDestination(item: $selectedRestaurant) { restaurant in
+            RestaurantDetailView(restaurant: restaurant)
+        }
     }
 
     // MARK: - Map View
@@ -49,6 +53,9 @@ struct NavigationMapView: View {
                     anchor: .bottom
                 ) {
                     RestaurantAnnotationView(restaurant: restaurant)
+                        .onTapGesture {
+                            selectedRestaurant = restaurant
+                        }
                 }
                 .annotationTitles(.hidden)
             }
@@ -202,5 +209,7 @@ struct POIAnnotationView: View {
 }
 
 #Preview {
-    NavigationMapView()
+    NavigationStack {
+        NavigationMapView()
+    }
 }

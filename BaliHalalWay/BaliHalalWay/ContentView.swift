@@ -2,7 +2,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationMapView()
+        NavigationStack {
+            NavigationMapView()
+        }
     }
 }
 
