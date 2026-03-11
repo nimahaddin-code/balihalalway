@@ -211,6 +211,13 @@ struct POIAnnotationView: View {
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(bgColor.opacity(0.12))
+                .shadow(color: .black.opacity(0.10), radius: 4, x: 0, y: 2)
+        )
     }
 }
 
