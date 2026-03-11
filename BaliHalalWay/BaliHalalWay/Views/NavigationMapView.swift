@@ -19,23 +19,29 @@ struct NavigationMapView: View {
     )
 
     private let restaurants = Restaurant.sampleData
+    private let topBarHeight: CGFloat = 56
 
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack(alignment: .top) {
+            if selectedTab == 0 {
+                // MARK: - Map (Navigation tab)
+                mapView
+                    .ignoresSafeArea()
+            } else {
+                // MARK: - Detail Route (full-screen card list)
+                VStack(spacing: 0) {
+                    Spacer()
+                        .frame(height: topBarHeight)
+                    DetailRouteView(restaurants: restaurants)
+                }
+            }
 
             // MARK: - Top Navigation Bar
             topNavigationBar
                 .padding(.top, 8)
                 .padding(.bottom, 4)
-
-            if selectedTab == 0 {
-                // MARK: - Map (Navigation tab)
-                mapView
-            } else {
-                // MARK: - Detail Route (full-screen card list)
-                DetailRouteView(restaurants: restaurants)
-            }
         }
+        .toolbar(.hidden, for: .navigationBar)
         .navigationDestination(item: $selectedRestaurant) { restaurant in
             RestaurantDetailView(restaurant: restaurant)
         }
