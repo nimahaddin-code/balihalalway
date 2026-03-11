@@ -66,7 +66,8 @@ struct RestaurantAnnotationView: View {
     private func thumbnailIcon(for name: String) -> String {
         if name.contains("Restaurant") { return "fork.knife" }
         if name.contains("Warung") { return "takeoutbag.and.cup.and.straw" }
-        if name.contains("Taste") { return "leaf.fill" }
+        if name.contains("Kitchen") { return "leaf.fill" }
+        if name.contains("Food") { return "fork.knife.circle" }
         return "fork.knife.circle"
     }
 }
@@ -76,8 +77,9 @@ struct RestaurantAnnotationView: View {
         Color.gray.opacity(0.3)
         RestaurantAnnotationView(
             restaurant: Restaurant(
-                name: "Halaiku Restaurant",
-                distance: "4.5 Km",
+                name: "Halalku Restaurant",
+                description: "Halalku Restaurant is located in Ubud, Bali.",
+                distance: "3.5 km",
                 coordinate: .init(latitude: 0, longitude: 0),
                 imagePlaceholderColor: "red"
             )
