@@ -1,6 +1,6 @@
 import CoreLocation
 
-struct Restaurant: Identifiable, Equatable {
+struct Restaurant: Identifiable, Equatable, Hashable {
     let id = UUID()
     let name: String
     let description: String
@@ -11,6 +11,10 @@ struct Restaurant: Identifiable, Equatable {
 
     static func == (lhs: Restaurant, rhs: Restaurant) -> Bool {
         lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
