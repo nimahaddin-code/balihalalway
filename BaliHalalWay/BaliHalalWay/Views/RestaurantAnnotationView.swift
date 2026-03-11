@@ -13,11 +13,17 @@ struct RestaurantAnnotationView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 6)
                         .fill(colorFromString(restaurant.imagePlaceholderColor).opacity(0.25))
-                    Image(systemName: thumbnailIcon(for: restaurant.name))
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(colorFromString(restaurant.imagePlaceholderColor))
-                        .padding(6)
+                    if UIImage(named: restaurant.imageName) != nil {
+                        Image(restaurant.imageName)
+                            .resizable()
+                            .scaledToFill()
+                    } else {
+                        Image(systemName: thumbnailIcon(for: restaurant.name))
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(colorFromString(restaurant.imagePlaceholderColor))
+                            .padding(6)
+                    }
                 }
                 .frame(width: 44, height: 44)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
@@ -81,7 +87,8 @@ struct RestaurantAnnotationView: View {
                 description: "Halalku Restaurant is located in Ubud, Bali.",
                 distance: "3.5 km",
                 coordinate: .init(latitude: 0, longitude: 0),
-                imagePlaceholderColor: "red"
+                imagePlaceholderColor: "red",
+                imageName: "halalku_restaurant"
             )
         )
     }

@@ -43,11 +43,17 @@ struct RestaurantCardView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(cardColor(for: restaurant.imagePlaceholderColor).opacity(0.20))
-                Image(systemName: thumbnailIcon(for: restaurant.name))
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(cardColor(for: restaurant.imagePlaceholderColor))
-                    .padding(20)
+                if UIImage(named: restaurant.imageName) != nil {
+                    Image(restaurant.imageName)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image(systemName: thumbnailIcon(for: restaurant.name))
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(cardColor(for: restaurant.imagePlaceholderColor))
+                        .padding(20)
+                }
             }
             .frame(width: 120, height: 120)
             .clipShape(RoundedRectangle(cornerRadius: 10))
