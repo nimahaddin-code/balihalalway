@@ -13,6 +13,7 @@
 		AA0001000000000000000004 /* RestaurantAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000004 /* RestaurantAnnotationView.swift */; };
 		AA0001000000000000000005 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000005 /* Restaurant.swift */; };
 		AA0001000000000000000008 /* DetailRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000008 /* DetailRouteView.swift */; };
+		AA0001000000000000000009 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000009 /* RestaurantDetailView.swift */; };
 		AA0001000000000000000006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000006 /* Assets.xcassets */; };
 		AA0001000000000000000007 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0002000000000000000007 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		AA0002000000000000000004 /* RestaurantAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotationView.swift; sourceTree = "<group>"; };
 		AA0002000000000000000005 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AA0002000000000000000008 /* DetailRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouteView.swift; sourceTree = "<group>"; };
+		AA0002000000000000000009 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		AA0002000000000000000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0002000000000000000007 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				AA0002000000000000000003 /* NavigationMapView.swift */,
 				AA0002000000000000000004 /* RestaurantAnnotationView.swift */,
 				AA0002000000000000000008 /* DetailRouteView.swift */,
+				AA0002000000000000000009 /* RestaurantDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				AA0001000000000000000003 /* NavigationMapView.swift in Sources */,
 				AA0001000000000000000004 /* RestaurantAnnotationView.swift in Sources */,
 				AA0001000000000000000008 /* DetailRouteView.swift in Sources */,
+				AA0001000000000000000009 /* RestaurantDetailView.swift in Sources */,
 				AA0001000000000000000005 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
